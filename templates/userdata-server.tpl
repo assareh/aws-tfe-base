@@ -120,6 +120,6 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docke
 sudo apt-get -qq -y update
 sudo apt-get install -qq -y docker-ce docker-ce-cli containerd.io
 cd /home/ubuntu
-wget https://install.terraform.io/airgap/latest.tar.gz
-tar xzf latest.tar.gz
-sudo ./install.sh airgap local-address=$PRIVATE_IP
+# wget https://install.terraform.io/airgap/latest.tar.gz
+# tar xzf latest.tar.gz
+# sudo ./install.sh airgap local-address=$PRIVATE_IP
