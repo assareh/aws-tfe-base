@@ -59,18 +59,6 @@ resource "aws_instance" "tfe-server" {
     tpl_server_count_index        = count.index
   })
 
-  connection {
-    type     = "ssh"
-    user     = "ubuntu"
-    private_key = "${file("~/.ssh/${var.environment_name}.pem")}"
-    host     = self.public_ip
-  }
-
-  provisioner "file" {
-    source      = "airgap/${var.airgap_file}"
-    destination = "/home/ubuntu/${var.airgap_file}"
-  }
-
   lifecycle {
     ignore_changes = [ami, tags]
   }
