@@ -29,3 +29,7 @@ output "message" {
     Database Password:  ${local.dbpassword}
 EOF
 }
+
+output "ssh_private_key" {
+value = nonsensitive(tls_private_key.tfe.private_key_pem)
+}
