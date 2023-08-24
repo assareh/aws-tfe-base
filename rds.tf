@@ -21,7 +21,7 @@ resource "aws_db_instance" "tfe" {
   allocated_storage    = 20
   storage_type         = "gp2"
   engine               = "postgres"
-  engine_version       = "14.1"
+  engine_version       = "14.6"
   instance_class       = "db.m6g.large"
   db_name              = "${replace(var.environment_name, "-", "")}db"
   identifier           = var.environment_name
