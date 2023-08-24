@@ -11,11 +11,11 @@ resource "aws_key_pair" "tfe" {
   public_key = tls_private_key.tfe.public_key_openssh
 }
 
-resource "null_resource" "tfe" {
-  provisioner "local-exec" {
-    command = "echo '${tls_private_key.tfe.private_key_pem}' > ~/.ssh/${var.environment_name}.pem && chmod 600 ~/.ssh/${var.environment_name}.pem"
-  }
-}
+# resource "null_resource" "tfe" {
+#   provisioner "local-exec" {
+#     command = "echo '${tls_private_key.tfe.private_key_pem}' > ~/.ssh/${var.environment_name}.pem && chmod 600 ~/.ssh/${var.environment_name}.pem"
+#   }
+# }
 
 data "aws_ami" "ubuntu" {
   most_recent = true
